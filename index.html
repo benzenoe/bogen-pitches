@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Ashth × Bogen.ai — European Market Entry Strategy</title>
+<title>Ashth × Eytan.com — European Market Entry Strategy</title>
 <script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.0/dist/chart.umd.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/chartjs-plugin-datalabels@2.2.0/dist/chartjs-plugin-datalabels.min.js"></script>
 <style>
@@ -328,7 +328,8 @@
 <!-- NAV -->
 <nav>
   <div class="nav-logo">
-    <span class="logo-pill">BOGEN.AI</span>
+    <img src="/images/eb-logo2.png" alt="Eytan.com" style="height:38px; width:38px; object-fit:contain;">
+    <span style="color:#667eea; font-weight:800; font-size:1rem; letter-spacing:0.03em;">eytan.com</span>
     <span class="x">×</span>
     <span class="ashth-pill">ASHTH</span>
   </div>
@@ -350,7 +351,7 @@
 
 <!-- HERO -->
 <div class="hero">
-  <div class="hero-badge"><div class="dot"></div>Confidential Marketing Pitch — Prepared by Bogen.ai</div>
+  <div class="hero-badge"><div class="dot"></div>Confidential Marketing Pitch — Prepared by Eytan.com</div>
   <h1>Ashth Europe<br>Launch Strategy</h1>
   <p class="hero-sub">A full-spectrum digital marketing plan to establish Ashth's lab-grown diamond brand across Europe — SEO, PPC, Social, Influencers & Amazon.</p>
   <div class="hero-stats">
@@ -1489,11 +1490,11 @@
 </section>
 <div class="divider"></div>
 
-<!-- WHY BOGEN.AI -->
+<!-- WHY EYTAN.COM -->
 <section style="padding:5rem 2rem; max-width:1200px; margin:0 auto;" class="fade-in">
   <div class="section-label">Your Partner</div>
-  <h2>Why Bogen.ai for This Launch</h2>
-  <p class="section-desc">Eytan Benzeno and the Bogen.ai team bring cross-continent experience in digital marketing, AI-driven campaign optimization, and luxury brand positioning.</p>
+  <h2>Why Eytan.com for This Launch</h2>
+  <p class="section-desc">Eytan Benzeno and the Eytan.com team bring cross-continent experience in digital marketing, AI-driven campaign optimization, and luxury brand positioning.</p>
 
   <div class="cards cards-4">
     <div class="card" style="text-align:center;">
@@ -1521,24 +1522,24 @@
   <div class="glow-card" style="margin-top:2rem; text-align:center;">
     <div style="font-size:0.85rem; color:var(--gray); text-transform:uppercase; letter-spacing:0.15em; margin-bottom:0.5rem;">Ready to Launch</div>
     <h3 style="font-size:2rem; margin-bottom:0.5rem;">Let's Build Ashth Europe Together</h3>
-    <p style="color:var(--gray); margin-bottom:1.5rem;">Contact Bogen.ai to discuss your European expansion roadmap and get a custom proposal.</p>
+    <p style="color:var(--gray); margin-bottom:1.5rem;">Contact Eytan.com to discuss your European expansion roadmap and get a custom proposal.</p>
     <div style="display:flex; gap:1rem; justify-content:center; flex-wrap:wrap;">
       <a href="mailto:eytan@benzeno.com" class="btn-primary">📧 eytan@benzeno.com</a>
-      <a href="https://bogen.ai" class="btn-outline" target="_blank">Visit Bogen.ai →</a>
+      <a href="https://eytan.com" class="btn-outline" target="_blank">Visit eytan.com →</a>
     </div>
   </div>
 </section>
 
 <!-- FOOTER -->
 <footer>
-  <div class="footer-logo">BOGEN.AI</div>
-  <p>AI-Powered Marketing for Global Brands</p>
+  <div class="footer-logo" style="display:flex;align-items:center;justify-content:center;gap:0.5rem;"><img src="/images/eb-logo2.png" alt="Eytan.com" style="height:32px;width:32px;object-fit:contain;"><span>eytan.com</span></div>
+  <p>Digital Marketing &amp; AI Consulting</p>
   <div class="footer-links">
-    <a href="https://bogen.ai">bogen.ai</a>
+    <a href="https://eytan.com">eytan.com</a>
     <a href="mailto:eytan@benzeno.com">eytan@benzeno.com</a>
     <a href="https://ashth.com" target="_blank">ashth.com</a>
   </div>
-  <p style="font-size:0.75rem; color:#445566;">Prepared exclusively for Ashth / ConsciousCarats Pvt Ltd · Confidential · © 2026 Bogen.ai</p>
+  <p style="font-size:0.75rem; color:#445566;">Prepared exclusively for Ashth / ConsciousCarats Pvt Ltd · Confidential · © 2026 Eytan.com</p>
 </footer>
 
 <script>
@@ -1557,8 +1558,27 @@ const ORANGE = '#FF9900';
 // ── FADE IN ──
 const observer = new IntersectionObserver(entries => {
   entries.forEach(e => { if(e.isIntersecting) e.target.classList.add('visible'); });
-}, { threshold: 0.1 });
+}, { threshold: 0.01, rootMargin: "0px 0px -10px 0px" });
 document.querySelectorAll('.fade-in').forEach(el => observer.observe(el));
+
+// Instantly show section if navigated to via anchor link
+function revealAnchorTarget() {
+  const hash = window.location.hash;
+  if (hash) {
+    const target = document.querySelector(hash);
+    if (target) {
+      target.classList.add('visible');
+      // Also reveal all previous sections
+      document.querySelectorAll('.fade-in').forEach(el => {
+        if (el.getBoundingClientRect().top < window.innerHeight + 200) {
+          el.classList.add('visible');
+        }
+      });
+    }
+  }
+}
+window.addEventListener('hashchange', revealAnchorTarget);
+window.addEventListener('load', revealAnchorTarget);
 
 // ── TAB SWITCH ──
 function switchTab(name) {
